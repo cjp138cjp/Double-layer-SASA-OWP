@@ -31,7 +31,7 @@ from pyhht.emd import EMD
 from pyhht.visualization import plot_imfs
 from sklearn.metrics import mean_absolute_error # 平方绝对误差
 # vmd分解 #交叉验证解决data leakage
-df = pd.read_csv(r"E:\陈加鹏\电力预测\code\7.8\Time-Series-stock\data\loady.csv")
+df = pd.read_csv(r".\data\loady.csv")
 # 标准化
 df_list = pd.concat([df['kw2'], df['kw3'], df['kw4']], ignore_index=True).dropna()
 df_list_max = df_list.max()
@@ -194,7 +194,7 @@ print(len(testtest),len(emdlstm))
 
 
 dt1 = pd.DataFrame({"true":np.array(testtest).reshape(-1,),"predic":np.array(emdlstm).reshape(-1,)})
-dt1.to_excel(r"C:\Users\cjp\Desktop\电力价格预测\vmd-lstm.xlsx")
+dt1.to_excel(r".\vmd-lstm.xlsx")
 
 print("MSE:", mean_squared_error(testtest, emdlstm))
 print("RMSE:", sqrt(mean_squared_error(testtest, emdlstm)))
