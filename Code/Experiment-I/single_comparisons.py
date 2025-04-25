@@ -31,7 +31,7 @@ from pyhht.emd import EMD
 from pyhht.visualization import plot_imfs
 from sklearn.metrics import mean_absolute_error # 平方绝对误差
 # vmd分解 #交叉验证解决data leakage
-df = pd.read_csv(r".\data\loady.csv")
+df = pd.read_csv(r".\data\1.csv")
 # 标准化
 df_list = pd.concat([df['kw2'], df['kw3'], df['kw4']], ignore_index=True).dropna()
 df_list_max = df_list.max()
